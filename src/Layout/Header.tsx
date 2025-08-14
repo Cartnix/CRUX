@@ -1,12 +1,21 @@
-import { BurgerButton } from "../../assets/Custom/BurgerMenuIcon";
-import SvgLogo from "../../assets/svg/Logo";
-import { useState } from "react";
-import HeaderModal from "./BurgerMenu"
+import { BurgerButton } from "../assets/Custom/BurgerMenuIcon";
+import SvgLogo from "../assets/svg/Logo";
+import { useEffect, useState } from "react";
+import HeaderModal from "../Components/HeaderComponents/BurgerMenu"
 import { AnimatePresence } from "framer-motion"
 
 
-export default function HeaderApp() {
+export default function HeaderLayer() {
+
     const [open, setOpen] = useState(false)
+
+    useEffect(() => {
+        if (open) {
+            document.body.classList.add("overflow-hidden")
+        } else {
+            document.body.classList.remove("overflow-hidden")
+        }
+    }, [open])
 
     return (
         <>

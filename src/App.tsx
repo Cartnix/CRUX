@@ -1,11 +1,13 @@
-import HeaderApp from "./Components/HeaderComponents/Header"
+import ContentLayer from "./Layout/Content"
+import HeaderLayer from "./Layout/Header"
 
 
 function App() {
 
   return (
     <>
-      <HeaderApp />
+      <HeaderLayer />
+      <ContentLayer/>
     </>
   )
 }
