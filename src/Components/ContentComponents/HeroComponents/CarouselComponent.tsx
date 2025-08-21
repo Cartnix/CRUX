@@ -1,18 +1,43 @@
-import { CarouselData } from "../../utils/data"
-import CarouselItem from "./CarouselItem"
+import { useEffect, useRef, useState } from "react";
+import { CarouselData } from "../../../Utils/Carouseldata";
+import CarouselItem from "./CarouselItem";
 
 export default function CarouselWrapper() {
-    return (
-        <div className="flex items-center gap-16 overflow-hidden scroll-smooth w-full carousel-container">
-            {CarouselData.map((item) => (
-                <CarouselItem
-                    key={item.title}
-                    title={item.title}
-                    src={item.src} 
-                    />
-                    
-                )
-            )}
-        </div>
-    )
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+  const speed = 0.5; 
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const animate = () => {
+      setOffset((prev) => {
+        const newOffset = prev - speed;
+        const totalWidth = container.scrollWidth / 2;
+        return newOffset <= -totalWidth ? 0 : newOffset;
+      });
+      requestAnimationFrame(animate);
+    };
+
+    const animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+  return (
+    <div className="overflow-hidden w-full carousel-container">
+      <div
+        ref={containerRef}
+        className="flex gap-16"
+        style={{
+          transform: `translateX(${offset}px)`,
+          willChange: "transform",
+        }}
+      >
+        {[...CarouselData, ...CarouselData].map((item, index) => (
+          <CarouselItem key={index} title={item.title} src={item.src} />
+        ))}
+      </div>
+    </div>
+  );
 }

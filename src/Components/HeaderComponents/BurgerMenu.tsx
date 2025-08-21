@@ -20,7 +20,7 @@ export default function HeaderMenu() {
       </nav>
       <ButtonUI text="Get in touch" />
       <div className="flex-1 flex flex-col justify-center items-center gap-1.5 text-center">
-        <h2 className="text-2xl">Created by <span className="text-[#512FEB] font-bold text-3xl">CRUX</span></h2>
+        <h2>Created by <span className="text-[#512FEB] font-bold text-3xl">CRUX</span></h2>
         <span className="mb-5" >CRUX — turning visions into digital experiences</span>
         <span>@All right received</span>
       </div>

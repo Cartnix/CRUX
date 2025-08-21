@@ -1,4 +1,5 @@
 import ContentLayer from "./Layout/Content"
+import FooterLayer from "./Layout/Footer"
 import HeaderLayer from "./Layout/Header"
 
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <HeaderLayer />
       <ContentLayer/>
+      <FooterLayer/>
     </>
   )
 }

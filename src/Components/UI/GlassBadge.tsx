@@ -1,12 +1,13 @@
 type GlassBadgeprops = {
-    text: string
+    text: React.ReactNode,
+    id?: string,
 }
 
 
-export default function GlassBadge({text} : GlassBadgeprops)
+export default function GlassBadge({text, id} : GlassBadgeprops)
 {
     return (
-        <div className="text-amber-50 p-1.5 backdrop-blur-md bg-white/10 border border-white/15 shadow-lg rounded-2xl mb-4">
+        <div id={id} className="text-amber-50 text-[14px] p-2.5 backdrop-blur-md bg-[#0D0D0D] border border-white/15 shadow-lg rounded-xl mb-4">
             {text}
         </div>
     )
