@@ -7,6 +7,7 @@ import FirstCardS from "../ServicesCards/FistCardS";
 import type { ServiceDataI } from "../../../Utils/ServiceCardsData";
 import SecondCardS from "../ServicesCards/SecondCardS";
 import ThirdCardS from "../ServicesCards/ThirdCardS";
+import { motion } from "framer-motion";
 
 type CardData = ProgressCardDataI | ServiceDataI;
 
@@ -27,18 +28,40 @@ const serviceMap: Record<string, React.ComponentType> = {
     ThirdCardS,
 };
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.3,
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1}
+};
+
 export default function CardWrapper({ cards, type }: CardWrapperProps) {
     const componentMap = type === "Progress" ? progressMap : serviceMap
     return (
-        <div className="flex flex-row flex-wrap justify-center gap-5">
+        <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            viewport={{amount: .5, once: true}}
+            whileInView="visible"
+            className="flex flex-row flex-wrap justify-center gap-5">
             {cards.map((card, index) => {
                 const Component = componentMap[card.content];
                 return (
-                    <GrayCard key={index} title={card.title} description={card.description} type={type}>
-                        {Component ? <Component /> : null}
-                    </GrayCard>
+                    <motion.div key={index} variants={cardVariants}>
+                        <GrayCard title={card.title} description={card.description} type={type}>
+                            {Component ? <Component /> : null}
+                        </GrayCard>
+                    </motion.div>
                 );
             })}
-        </div>
+        </motion.div>
     );
 }

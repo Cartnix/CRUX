@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import CardEfficiencyIcon from "../../../assets/svg/CardEfficiencyIcon";
 import CardRefreshIcon from "../../../assets/svg/CardRefreshIcon";
 import CardShieldIcon from "../../../assets/svg/CardShieldIcon";
@@ -11,10 +12,10 @@ export default function ThirdCardP() {
                     <CardShieldIcon />
                     <span>Security</span>
                 </div>
-                <div className="flex gap-2 items-center bg-[rgba(255,255,255,.12)] p-3 rounded-3xl">
+                <motion.div initial={{x: -10}} viewport={{once: true, amount: .5}} whileInView={{x: 0}} transition={{delay: 1, duration: 1, ease: 'easeInOut'}} className="flex gap-2 items-center bg-[rgba(255,255,255,.12)] p-3 rounded-3xl">
                     <CardEfficiencyIcon />
                     <span>Efficiency</span>
-                </div>
+                </motion.div>
                 <div className="flex gap-2 items-center">
                     <CardSpeedIcon />
                     <span>Speed</span>

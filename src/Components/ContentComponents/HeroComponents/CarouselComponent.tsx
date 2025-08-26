@@ -25,7 +25,7 @@ export default function CarouselWrapper() {
   }, []);
 
   return (
-    <div className="overflow-hidden w-full carousel-container">
+    <div className="overflow-hidden w-full carousel-container mb-8">
       <div
         ref={containerRef}
         className="flex gap-16"
