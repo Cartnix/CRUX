@@ -13,7 +13,7 @@ export default function HeaderMenu() {
         <ul className="flex flex-col justify-around font-bold h-[100%] text-[clamp(1rem, 2vh, 2rem)]">
           <li><a href="#">Process</a></li>
           <li><a href="#">Services</a></li>
-          <li><a href="#">Benefits</a></li>
+          <li><a href="#">Demo</a></li>
           <li><a href="#">Plans</a></li>
           <li><a href="#">Contact</a></li>
         </ul>

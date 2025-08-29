@@ -14,18 +14,21 @@ export default function ContentLayer() {
             <AppHero />
             <AppAbout />
             <ContentTemplate
+                id="Process"
                 textGlass="Process"
                 title="Your path to excellence"
                 desc="A simple, effective approach to deliver excellence.">
                 <CardWrapper cards={ProgressCardsData} type="Progress" />
             </ContentTemplate>
             <ContentTemplate
+                id="Services"
                 textGlass="Services"
                 title="Innovative services for growth"
                 desc="Tailored solutions to streamline, innovate, and grow.">
                 <CardWrapper cards={ServiceCardsData} type="Service" />
             </ContentTemplate>
             <ContentTemplate
+                id="Demo"
                 textGlass="All what you need"
                 title="Just feel the difference"
                 desc="We help people navigate in crypto processes">

@@ -48,11 +48,11 @@ export default function HeaderLayer() {
                     <SvgLogo height={28} width={28} />
                     <nav>
                         <ul className="flex gap-9 text-amber-50">
-                            <li><a href="#">Process</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Benefits</a></li>
-                            <li><a href="#">Plans</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#Process">Process</a></li>
+                            <li><a href="#Services">Services</a></li>
+                            <li><a href="#Demo">Demo</a></li>
+                            <li><a href="#Plans">Plans</a></li>
+                            <li><a href="#Contact">Contact</a></li>
                         </ul>
                     </nav>
                 </motion.header>

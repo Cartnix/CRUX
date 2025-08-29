@@ -5,7 +5,7 @@ import SvgLogo from "../assets/svg/Logo";
 
 export default function FooterLayer() {
     return (
-        <footer className="relative flex flex-col text-amber-50 p-6 overflow-hidden border-t border-t-amber-50">
+        <footer className="relative flex flex-col text-amber-50 p-6 overflow-hidden border-t border-t-amber-50" id="Contact">
             <div className="absolute inset-0 transform rotate-145 bg-[linear-gradient(to_bottom,_#000_30%,_rgba(81,47,235,0.3)_50%,_#000_70%)] blur-3xl"></div>
 
             <div className="relative">
