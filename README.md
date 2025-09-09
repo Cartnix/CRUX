@@ -6,3 +6,4 @@ What I used here:
 -Framer Motion
 -TailWind
 -Vite
+-Next
